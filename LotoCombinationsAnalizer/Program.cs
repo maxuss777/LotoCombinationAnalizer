@@ -14,34 +14,7 @@ namespace LotoCombinationsAnalizer
 
 		static void Main()
 		{
-			var winners = GetWinnersFromHistory();
-			WriteResultToLocalFileAsJson(winners);
-
-			var bestWinnerWithFourMatched = new Winner();
-			var bestWinnerWithFiveMatched = new Winner();
-			var bestWinnerWithSixMatched = new Winner();
-
-			foreach (var winner in winners)
-			{
-				foreach (var winnersCollection in winner.collectionsList)
-				{
-					if (winnersCollection.FourMatchedNumber.Count > bestWinnerWithFourMatched.collectionsList.Count)
-						bestWinnerWithFourMatched = winner;
-
-					if (winnersCollection.FiveMatchedNumber.Count > bestWinnerWithFiveMatched.collectionsList.Count)
-						bestWinnerWithFiveMatched = winner;
-
-					if (winnersCollection.SixMatchedNumber.Count > bestWinnerWithSixMatched.collectionsList.Count)
-						bestWinnerWithSixMatched = winner;
-				}
-			}
-
-			var filteredWinnersList = new List<Winner>();
-			filteredWinnersList.Add(bestWinnerWithFourMatched);
-			filteredWinnersList.Add(bestWinnerWithFiveMatched);
-			filteredWinnersList.Add(bestWinnerWithSixMatched);
-
-			Console.Read();
+            AnaliseAndFindBestWinners();
 		}
 
 		public static List<Winner> GetWinnersFromHistory()

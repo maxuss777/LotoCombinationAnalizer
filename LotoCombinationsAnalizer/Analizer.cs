@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using LotoCombinationsAnalizer.Objects;
 using ServiceStack;
 
@@ -23,7 +24,12 @@ namespace LotoCombinationsAnalizer
 		{
 			List<Winner> winners = new List<Winner>();
 
-			for (int i = 0; i < _uniqArraysList.Count; i++)
+            Console.Clear();
+            Console.WriteLine($"_uniqArraysList.Count: {_uniqArraysList.Count} - left: ");
+            Console.WriteLine($"attempts: {attempts} - left:");
+            Console.WriteLine("winners.Count:");
+
+            for (int i = 0; i < _uniqArraysList.Count; i++)
 			{
 				var currentArray = _uniqArraysList[i];
 				var winner = new Winner();
@@ -40,10 +46,9 @@ namespace LotoCombinationsAnalizer
 						winner.WinArray = currentArray;
 					}
 
-					Console.Clear();
-					Console.WriteLine("_uniqArraysList.Count: {0} - left {1}", _uniqArraysList.Count, i);
-					Console.WriteLine("attempts: {0} - left: {1}", attempts, j);
-					Console.WriteLine("winners.Count: {0}", winners.Count);
+                    WriteAt(i.ToString(), 37, 0);
+                    WriteAt(j.ToString(), 21, 1);
+                    WriteAt(winners.Count.ToString(), 15, 2);
 				}
 				if (winner.collectionsList.Count != 0)
 				{
@@ -53,6 +58,20 @@ namespace LotoCombinationsAnalizer
 
 			return winners;
 		}
+
+        private void WriteAt(string s, int x, int y)
+        {
+            try
+            {
+                Console.SetCursorPosition(x, y);
+                Console.Write(s);
+            }
+            catch (ArgumentOutOfRangeException e)
+            {
+                Console.Clear();
+                Console.WriteLine(e.Message);
+            }
+        }
 
 		public MatchedCollectionHolder FindWinnerCollections(List<int> generatedNumber)
 		{
