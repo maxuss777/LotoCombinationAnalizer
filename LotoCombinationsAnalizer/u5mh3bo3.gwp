@@ -1,0 +1,58 @@
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using LotoCombinationsAnalizer.Objects;
+using ServiceStack;
+
+namespace LotoCombinationsAnalizer
+{
+	public class Program
+	{
+		private static Analizer _analizer = new Analizer();
+
+		static void Main()
+		{
+			List<Winner> winners = _analizer.FindTheBestWinners();
+			var i = 1;
+			
+			/*foreach (var winner in winners)
+			{
+				Console.WriteLine("----------------------------");
+				Console.WriteLine("Winner {0}:\n", i);
+				Console.WriteLine("WinArray: {0}\n", winner.WinArray.ToJson());
+				foreach (var collection in winner.collectionsList)
+				{
+					Console.WriteLine("won combination: {0}\n", collection.wonCombination.ToJson());
+					Console.WriteLine("4 match count: {0}\n", collection.ForMatchedNumber.Count);
+					Console.WriteLine("5 match count: {0}\n", collection.FiveMatchedNumber.Count);
+					Console.WriteLine("6 match count: {0}\n", collection.SixMatchedNumber.Count);
+				}
+				i++;
+			}*/
+			foreach (var winner in winners)
+			{
+				File.WriteAllText(@"C:\Users\MaximAndEugenia\Desktop\WinnerObjects.txt", 
+					string.Format("----------------------------"));
+				File.WriteAllText(@"C:\Users\MaximAndEugenia\Desktop\WinnerObjects.txt",
+					string.Format("Winner {0}:\n", i));
+				File.WriteAllText(@"C:\Users\MaximAndEugenia\Desktop\WinnerObjects.txt",
+					string.Format("WinArray: {0}\n", winner.WinArray.ToJson()));
+				foreach (var collection in winner.collectionsList)
+				{
+					File.WriteAllText(@"C:\Users\MaximAndEugenia\Desktop\WinnerObjects.txt",
+						string.Format("won combination: {0}\n", collection.wonCombination.ToJson()));
+					File.WriteAllText(@"C:\Users\MaximAndEugenia\Desktop\WinnerObjects.txt",
+						string.Format("4 match count: {0}\n", collection.ForMatchedNumber.Count));
+					File.WriteAllText(@"C:\Users\MaximAndEugenia\Desktop\WinnerObjects.txt",
+						string.Format("5 match count: {0}\n", collection.FiveMatchedNumber.Count));
+					File.WriteAllText(@"C:\Users\MaximAndEugenia\Desktop\WinnerObjects.txt",
+						string.Format("match) count: {0}\n", collection.SixMatchedNumber.Count));
+				}
+				i++;
+				File.WriteAllLines(@"C:\Users\MaximAndEugenia\Desktop\WinnerObjects.txt", winners.ConvertAll<Winner>(winners.));
+			}
+
+			Console.Read();
+		}
+	}
+}
