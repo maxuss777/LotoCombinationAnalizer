@@ -30,7 +30,7 @@ namespace LotoCombinationsAnalizer
 		}
 		public void WriteToLocalFileAsJsonObject(List<Winner> winners)
 		{
-			using (StreamWriter file = new StreamWriter(@"C:\Users\MaximAndEugenia\Desktop\WinnerJsonObjects.txt"))
+			using (StreamWriter file = new StreamWriter(@"C:\Users\Maksym\Desktop\WinnerJsonObjects.txt"))
 			{
 				foreach (var winner in winners)
 				{
@@ -44,7 +44,7 @@ namespace LotoCombinationsAnalizer
 		public void WriteFilteredResultToLocalFile(List<Winner> winners)
 		{
 			var i = 1;
-			using (StreamWriter file = new StreamWriter(@"C:\Users\MaximAndEugenia\Desktop\WinnerFilteredResult.txt"))
+			using (StreamWriter file = new StreamWriter(@"C:\Users\Maksym\Desktop\WinnerFilteredResult.txt"))
 			{
 				foreach (var winner in winners)
 				{

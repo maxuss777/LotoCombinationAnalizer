@@ -11,7 +11,7 @@ C:\source\LotoCombinationsAnalizer\LotoCombinationsAnalizer\bin\Debug\LotoCombin
 C:\source\LotoCombinationsAnalizer\LotoCombinationsAnalizer\bin\Debug\LotoCombinationsAnalizer.pdb
 C:\source\LotoCombinationsAnalizer\LotoCombinationsAnalizer\bin\Debug\ServiceStack.Text.dll
 C:\source\LotoCombinationsAnalizer\LotoCombinationsAnalizer\bin\Debug\ServiceStack.Text.xml
-C:\source\LotoCombinationsAnalizer\LotoCombinationsAnalizer\obj\Debug\LotoCombinationsAnalizer.csprojResolveAssemblyReference.cache
 C:\source\LotoCombinationsAnalizer\LotoCombinationsAnalizer\obj\Debug\LotoCombinationsAnalizer.csproj.CoreCompileInputs.cache
 C:\source\LotoCombinationsAnalizer\LotoCombinationsAnalizer\obj\Debug\LotoCombinationsAnalizer.exe
 C:\source\LotoCombinationsAnalizer\LotoCombinationsAnalizer\obj\Debug\LotoCombinationsAnalizer.pdb
+C:\source\LotoCombinationsAnalizer\LotoCombinationsAnalizer\obj\Debug\LotoCombinationsAnalizer.csprojResolveAssemblyReference.cache
